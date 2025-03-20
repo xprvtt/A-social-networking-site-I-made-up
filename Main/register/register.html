@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход в соцсеть</title>
+    <title>Регистрация</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             height: 100vh;
-            background: url('background.jpg') no-repeat center center/cover;
+            background: url('../background.jpg') no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: Arial, sans-serif;
         }
-        .login-container {
+        .register-container {
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
@@ -23,17 +23,17 @@
             text-align: center;
             width: 250px;
         }
-        .login-container h2 {
+        .register-container h2 {
             margin-bottom: 20px;
         }
-        .login-container input {
+        .register-container input {
             width: 80%;
             padding: 8px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .login-container button {
+        .register-container button {
             width: 100%;
             padding: 10px;
             background: #007bff;
@@ -42,14 +42,14 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .login-container button:hover {
+        .register-container button:hover {
             background: #0056b3;
         }
-        .register-btn {
+        .back-btn {
             margin-top: 10px;
             background: #28a745;
         }
-        .register-btn:hover {
+        .back-btn:hover {
             background: #218838;
         }
         .logo {
@@ -75,40 +75,35 @@
     </style>
 </head>
 <body>
-    <img src="logo.png" alt="Логотип" class="logo">
+    <img src="../logo.png" alt="Логотип" class="logo">
     <div class="site-title">Proxima</div>
-    <div class="login-container">
-        <h2>Вход</h2>
-        <form id="loginForm" action="login.php" method="POST">
+    <div class="register-container">
+        <h2>Регистрация</h2>
+        <form id="registerForm" action="register.php" method="POST">
             <input type="text" name="login" placeholder="Логин" required>
             <input type="password" name="password" placeholder="Пароль" required>
-            <button type="submit">Войти</button>
+            <button type="submit">Зарегистрироваться</button>
         </form>
         <div id="message"></div>
-        <button class="register-btn" onclick="goToRegister()">Зарегистрироваться</button>
+        <button class="back-btn" onclick="goToLogin()">Вернуться</button>
     </div>
 
     <script>
-        function goToRegister() {
-            window.location.href = "register/register.html";
+        function goToLogin() {
+            window.location.href = "../Main.html";
         }
 
-        document.getElementById("loginForm").onsubmit = async function (event) {
+        document.getElementById("registerForm").onsubmit = async function (event) {
             event.preventDefault(); // Останавливаем стандартную отправку формы
             
             let formData = new FormData(this);
-            let response = await fetch("login.php", {
+            let response = await fetch("register.php", {
                 method: "POST",
                 body: formData
             });
 
             let result = await response.text();
-
-            if (result.trim() === "success") {
-                window.location.href = "profile/profile.html"; // Перенаправление на профиль
-            } else {
-                document.getElementById("message").innerText = result;
-            }
+            document.getElementById("message").innerText = result; // Выводим сообщение
         };
     </script>
 </body>

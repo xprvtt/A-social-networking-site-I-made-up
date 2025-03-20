@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль | Proxima</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('background.jpg') no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .logo {
+            width: 80px;
+            border-radius: 35px;
+        }
+        .site-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-left: 10px;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .username {
+            color: white;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .chat-container {
+            width: 60%;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .chat-box {
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .create-chat-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .create-chat-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div style="display: flex; align-items: center;">
+            <img src="logo.png" alt="Логотип" class="logo">
+            <div class="site-title">Proxima</div>
+        </div>
+        <div class="user-info">
+            <div class="username" id="username">  </div>
+            <img src="avatar.png" alt="Аватар" class="avatar">
+        </div>
+    </div>
+    
+    <div class="chat-container">
+        <h2>Лента чатов</h2>
+        <div class="chat-box">
+            <h3>Чат 1</h3>
+        </div>
+        <button class="create-chat-btn">Создать чат</button>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const username = localStorage.getItem("username");
+            if (username) {
+                document.getElementById("username").textContent = username;
+            }
+        });
+    </script>
+</body>
+</html>
