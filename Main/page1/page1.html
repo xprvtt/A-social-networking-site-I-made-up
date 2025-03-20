@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxima Game Club</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            padding: 20px;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 5vw; /* Используем vw для уменьшения текста в зависимости от ширины экрана */
+            margin-bottom: 20px;
+        }
+
+        h1 a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Proxima', sans-serif;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 35px;
+            transition: all 0.3s ease;
+        }
+
+        .text-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .devices-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap; /* Чтобы столбцы не сливались */
+        }
+
+        .device-column {
+            list-style: none;
+            padding: 0;
+            flex: 1 1 200px; /* Столбцы гибкие */
+            min-width: 200px; /* Чтобы минимальная ширина не была меньше 200px */
+        }
+
+        .device-column li {
+            margin: 10px 0;
+            font-size: 2vw; /* Используем vw для изменения размера шрифта в зависимости от ширины экрана */
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            .image-container {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .image-container img:not(.center-image) {
+                display: none;
+            }
+
+            .image-container img.center-image {
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .devices-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .devices-list ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* Меньший размер шрифта на мобильных устройствах */
+            h1 {
+                font-size: 8vw; /* Более крупный текст для маленьких экранов */
+            }
+
+            .device-column li {
+                font-size: 4vw; /* Уменьшаем размер шрифта для маленьких экранов */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1><a href="../Main.html">Proxima Game Club</a></h1>
+
+        <div class="image-container">
+            <img src="image1.jpg" alt="Image 1" class="left-image">
+            <img src="image2.jpg" alt="Image 2" class="center-image">
+        </div>
+
+        <div class="text-section">
+            <p>Diveces</p>
+        </div>
+
+        <div class="devices-list">
+            <ul class="device-column">
+                <li>Мышь</li>
+                <li>Клавиатура</li>
+                <li>Гарнитура</li>
+                <li>Монитор</li>
+                <li>Видеокарта</li>
+            </ul>
+
+            <ul class="device-column">
+                <li>RAZER DEATHADDER V2</li>
+                <li>RAZER HUNTSMAN V2 TKL</li>
+                <li>LOGITECH G PRO X SUPERLIGHT</li>
+                <li>360 HZ 24.5’</li>
+                <li>NVIDIA RTX 4070 Ti</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

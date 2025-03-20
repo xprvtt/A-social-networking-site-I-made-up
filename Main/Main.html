@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxima Game Club</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg'); /* Задний фон */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
 
+        /* Контейнер для изображений */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Позволяет переносить элементы */
+            padding: 20px;
+            max-width: 90%;
+            margin: auto;
+            gap: 10px;
+        }
+
+        /* Картинки */
+        .header img {
+            width: 30%;
+            max-width: 424px;
+            height: auto;
+            border-radius: 35px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        /* Адаптив: на мобильных устройствах скрываем левую и правую картинки */
+        @media (max-width: 768px) {
+            .header {
+                justify-content: center; /* Центрируем картинку */
+            }
+
+            .header img:not(.center-image) { /* Скрываем все, кроме центральной */
+                display: none;
+            }
+
+            .center-image {
+                width: 80%; /* Увеличиваем, чтобы смотрелось хорошо */
+                max-width: 300px;
+            }
+        }
+
+        /* Основной контейнер */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Логотип */
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            margin-top: 80px;
+        }
+
+        .logo:hover {
+            text-decoration: underline;
+        }
+
+        /* Кнопки */
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .button {
+            padding: 12px 24px;
+            font-size: 18px;
+            color: white;
+            background-color: #1DA1F2;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0d8ddb;
+        }
+
+        /* Социальные кнопки */
+        .social-links {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap; /* Делаем адаптивное расположение */
+            justify-content: center;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="left-image.jpg" alt="Left Image" class="left-image">
+        <img src="center-image.jpg" alt="Center Image" class="center-image"> <!-- Останется на мобильных -->
+        <img src="right-image.jpg" alt="Right Image" class="right-image">
+    </div>
+
+    <div class="container">
+        <a href="#" class="logo">Proxima Game Club</a>
+
+        <div class="buttons">
+            <a href="page1/page1.html" class="button">Наши девайсы</a>
+        </div>
+
+        <div class="social-links">
+            <a href="page2/page2.html" class="button">Telegram</a>
+            <a href="page2/page2.html" class="button">VK</a>
+            <a href="page2/page2.html" class="button">Забронировать</a>
+        </div>
+    </div>
+</body>
+</html>
